@@ -10,7 +10,6 @@ import "./Register.css";
 
 const Register = () => {
   const { enqueueSnackbar } = useSnackbar();
-
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -48,11 +47,10 @@ const Register = () => {
    * }
    */
   const register = async (formData) => {
-   
     if (!validateInput(formData)) {
       return;
     }
-
+    
     const { username, password } = formData;
 
     try {
@@ -184,7 +182,7 @@ const Register = () => {
             value={formData.confirmPassword}
             onChange={handleInputChange}
           />
-         <Button
+          <Button
             className="button"
             variant="contained"
             onClick={() => register(formData)}
