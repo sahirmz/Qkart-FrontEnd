@@ -70,13 +70,14 @@ const Login = () => {
           response.data.balance
         );
 
+
         setLoading(false);
-        enqueueSnackbar("Login successfully", { variant: "success" });
+        enqueueSnackbar("Logged in successfully", { variant: "success" });
         setFormData({
           username: "",
           password: "",
         });
-        history.push("");
+        history.push("/");
       } else {
         enqueueSnackbar("Something went wrong. Please try again.", {
           variant: "error",
