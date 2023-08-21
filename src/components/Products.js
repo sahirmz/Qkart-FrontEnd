@@ -94,7 +94,6 @@ const Products = () => {
   const username = localStorage.getItem("username");
   const balance = localStorage.getItem("balance");
 
-
   console.log("Balance:", balance);
   // Original products list
   const [productDetails, setProductDetails] = useState([]);
@@ -178,7 +177,6 @@ const Products = () => {
         );
       }
     }
-    //End loading
     setIsLoading(false);
   };
 
@@ -197,15 +195,15 @@ const Products = () => {
 
   const debounceSearch = (event, debounceTimeout) => {
     let text = event.target.value;
-    // [IF true] Clear timoutId
+
     if (debounceTimeout) {
       clearTimeout(debounceTimeout);
     }
-    // Set timeout & make the API call
+
     let timeOut = setTimeout(() => {
       performSearch(text);
     }, 500);
-    // Update set timeoutId
+
     setTimeoutId(timeOut);
   };
 
