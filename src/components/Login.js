@@ -70,7 +70,6 @@ const Login = () => {
           response.data.balance
         );
 
-
         setLoading(false);
         enqueueSnackbar("Logged in successfully", { variant: "success" });
         setFormData({

@@ -151,7 +151,6 @@ const Products = () => {
    *
    */
   const performSearch = async (text) => {
-    //Start loading
     setIsLoading(true);
     try {
       // GET call
@@ -182,10 +181,6 @@ const Products = () => {
 
   // TODO: CRIO_TASK_MODULE_PRODUCTS - Optimise API calls with debounce search implementation
   /**
-   * Definition for debounce handler
-   * With debounce, this is the function to be called whenever the user types text in the searchbar field
-   *
-   * @param {{ target: { value: string } }} event
    *    JS event object emitted from the search input field
    *
    * @param {NodeJS.Timeout} debounceTimeout

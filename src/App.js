@@ -3,6 +3,8 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Products from "./components/Products";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Checkout from "./components/Checkout";
+import Thanks from "./components/Thanks"
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
 
@@ -22,6 +24,8 @@ function App() {
           </Route>
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
+          <Route path="/checkout" component={Checkout} />
+          <Route path="/thanks" component={Thanks} />
         </Switch>
       </ThemeProvider>
     </div>
