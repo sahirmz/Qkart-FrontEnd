@@ -107,6 +107,8 @@ const Products = () => {
   const [timeoutId, setTimeoutId] = useState(null);
   // Loading animation control
   const [isLoading, setIsLoading] = useState(false);
+  //Controlling the input
+  const [searchText, setSearchText] = useState("");
 
   const performAPICall = async () => {
     setIsLoading(true);
@@ -382,9 +384,11 @@ const Products = () => {
   return (
     <div>
       <Header>
+        {/* Search view for Desktop */}
         <TextField
           className="search-desktop"
           size="small"
+          value={searchText}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -394,7 +398,10 @@ const Products = () => {
           }}
           placeholder="Search for items/categories"
           name="search"
-          onChange={(e) => debounceSearch(e, timeoutId)}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+            debounceSearch(e, timeoutId);
+          }}
         />
       </Header>
 
@@ -402,6 +409,7 @@ const Products = () => {
       <TextField
         className="search-mobile"
         size="small"
+        value={searchText}
         fullWidth
         InputProps={{
           endAdornment: (
@@ -412,7 +420,10 @@ const Products = () => {
         }}
         placeholder="Search for items/categories"
         name="search"
-        onChange={(e) => debounceSearch(e, timeoutId)}
+        onChange={(e) => {
+          setSearchText(e.target.value);
+          debounceSearch(e, timeoutId);
+        }}
       />
       {/* Search view for mobiles */}
 
